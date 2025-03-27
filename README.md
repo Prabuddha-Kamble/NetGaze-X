@@ -96,17 +96,41 @@ This Python script monitors network activity, detects open ports, performs OS fi
 5. Open `http://localhost:9090/` in your browser to access the Prometheus UI.
 6. In the **Targets** section of the Prometheus UI, ensure that both `localhost:9090` and `localhost:8000` are listed as **UP**.
 
-### **Setting Up Grafana**
+## Setting Up Grafana
 
-1. Download and install Grafana from [https://grafana.com/grafana/download](https://grafana.com/grafana/download).
-2. Grafana runs continuously in the background after installation.
-3. Open `http://localhost:3000/` in your browser.
-4. Log in with the default credentials (`admin/admin`).
-5. Add Prometheus as a data source:
-   - Go to **Configuration > Data Sources**.
-   - Click **Add data source** and select **Prometheus**.
-   - Set the URL to `http://localhost:9090/` and click **Save & Test**.
-6. Create a new dashboard and add visualizations using Prometheus metrics.
+1. **Download and Install Grafana**  
+   - Visit [Grafana's official website](https://grafana.com/grafana/download) and download the appropriate version for your OS.  
+   - Install and run Grafana (it runs continuously in the background).  
+
+2. **Access Grafana in Your Browser**  
+   - Open `http://localhost:3000/` in your web browser.  
+   - Log in using the default credentials (`admin/admin`).  
+
+3. **Add Prometheus as a Data Source**  
+   - Go to **Configuration > Data Sources**.  
+   - Click **Add data source** and select **Prometheus**.  
+   - Set the **URL** to `http://localhost:9090/` and click **Save & Test**.  
+
+---
+
+## **Importing a Pre-Configured Grafana Dashboard**
+
+If you want to import an existing Grafana dashboard from another system, follow these steps:
+
+### **🔹 Export the Grafana Dashboard (From the Source PC)**
+1. Open Grafana and navigate to the **dashboard you want to export**.  
+2. Click on **"Dashboard Settings" (Gear Icon ⚙️) in the top-right corner**.  
+3. Select **"JSON Model"** (Under "Settings").  
+4. Click **"Download JSON"** to save the dashboard configuration.  
+5. Share the JSON file (via email, GitHub, Google Drive, etc.).  
+
+### **🔹 Import the Grafana Dashboard (On the Target PC)**
+1. Ensure Grafana and Prometheus are installed and running.  
+2. Open Grafana and go to **"Dashboards"** (Left Sidebar) → Click **"Import"**.  
+3. Click **"Upload JSON File"** and select the file shared with you.  
+4. Select the appropriate **Prometheus data source** before finalizing the import.  
+5. Click **"Import"**, and the dashboard will be available with all its settings and visualizations.    
+
 
 ## Installation
 
